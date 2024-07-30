@@ -13,8 +13,12 @@ jobs:
     runs-on: self-hosted
 
     steps:
+    - name: Move to workdir
+      run: cd /home/manish/DevOps_Practise/
+      
     - name: Checkout repository
       uses: actions/checkout@v2
+    
 
     - name: Build and push Docker image
       run: docker-compose build
