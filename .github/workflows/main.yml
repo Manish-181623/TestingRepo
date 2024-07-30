@@ -1,4 +1,4 @@
-name: Docker Compose Test on GitAction
+name: Docker Compose Test on GitActions
 
 on:
   push:
