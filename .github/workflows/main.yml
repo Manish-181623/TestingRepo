@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: github-runner-1
 
     steps:
     - name: Checkout repository
