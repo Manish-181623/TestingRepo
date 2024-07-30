@@ -23,4 +23,6 @@ jobs:
       run: docker-compose up -d
 
     - name: Check Container
-      run: docker ps
+      run: docker ps 
+    - name: Hi
+      run: echo 'Hello' 
