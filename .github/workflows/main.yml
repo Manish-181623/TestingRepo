@@ -25,12 +25,19 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-    - name: Build and push Docker image
+    - name: Build and push client Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: ./Client
         push: true
-        tags: manish181623/ci-cd_pipeline:latest
+        tags: manish181623/ci-cd_pipeline_client:latest
+        
+    - name: Build and push server Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: ./Server
+        push: true
+        tags: manish181623/ci-cd_pipeline_server:latest
 
   deploy:
     runs-on: ubuntu-latest
