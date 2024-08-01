@@ -59,14 +59,5 @@ jobs:
         ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
           cd ${{ secrets.WORKDIR }}
           echo "Successfully entered into server"
-          if [ -d ".git" ]; then
-            git pull origin master
-          else
-            echo "Not a git repository. Ensure the directory is correct and the repository is initialized."
-          fi
-          if [ -f "docker-compose.yml" ]; then
-            docker-compose up -d
-          else
-            echo "docker-compose.yml not found. Ensure the file is present in the directory."
-          fi
+          git clone https://github.com/Manish-181623/TestingRepo.git
         EOF
