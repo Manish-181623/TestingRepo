@@ -60,4 +60,5 @@ jobs:
           cd ${{ secrets.WORKDIR }}
           echo "Successfully entered into server"
           git clone https://github.com/Manish-181623/TestingRepo.git
+          docker-compose up -d
         EOF
